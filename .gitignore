@@ -1,0 +1,3 @@
+# exclude compilation outputs
+/web/FissionOpt.js
+/web/FissionOpt.wasm
