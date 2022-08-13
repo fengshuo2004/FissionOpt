@@ -1,4 +1,4 @@
-name: "Build web version"
+name: "test-build"
 on: [push]
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
       - name: Setup Emscripten toolchain
         uses: mymindstorm/setup-emsdk@v11
       - name: Compile using em++
-        run: cd web; em++ -v --bind -s MODULARIZE=1 -s EXPORT_NAME=FissionOpt \
-            -s ALLOW_MEMORY_GROWTH=1 -o FissionOpt.js -std=c++17 -flto -O3 \
+        run: cd web; em++ -v --bind -sMODULARIZE -sEXPORT_NAME=FissionOpt \
+            -sALLOW_MEMORY_GROWTH -o FissionOpt.js -std=c++17 -flto -O3 \
             Bindings.cpp ../Fission.cpp ../OptFission.cpp ../FissionNet.cpp \
             ../OverhaulFission.cpp ../OptOverhaulFission.cpp ../OverhaulFissionNet.cpp -I..
