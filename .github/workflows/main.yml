@@ -1,0 +1,16 @@
+name: "Build web version"
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Emscripten toolchain
+        uses: mymindstorm/setup-emsdk@v11
+      - name: Compile using em++
+        run: cd web; em++ -v --bind -s MODULARIZE=1 -s EXPORT_NAME=FissionOpt \
+            -s ALLOW_MEMORY_GROWTH=1 -o FissionOpt.js -std=c++17 -flto -O3 \
+            Bindings.cpp ../Fission.cpp ../OptFission.cpp ../FissionNet.cpp \
+            ../OverhaulFission.cpp ../OptOverhaulFission.cpp ../OverhaulFissionNet.cpp -I..
