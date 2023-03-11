@@ -19,6 +19,6 @@ add_executable(FissionOpt
 )
 
 target_include_directories(FissionOpt PRIVATE
-  ../xtensor/include
-  ../xtl/include
+  xtensor
+  xtl
 )
