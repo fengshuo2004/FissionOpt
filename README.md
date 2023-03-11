@@ -2,7 +2,7 @@
 
 ## Minecraft《核电工艺》模组裂变反应堆设计生成器
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/fengshuo2004/FissionOpt/test-build?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fengshuo2004/FissionOpt/main.yml?style=flat-square)
 
 Web version: https://leu-235.com/ (Built using emscripten. See [web/compile.bat](web/compile.bat) for details.)
 
